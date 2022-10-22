@@ -1,15 +1,22 @@
-$base-color: #337ab7;
+$base-color: #ff4081;
 $disable-background-color: #eceeef;
+
+form {
+  width: fit-content
+}
+
 .multiselect-dropdown {
   position: relative;
-  width: 100%;
+  width: fit-content;
+  height: fit-content;
   font-size: inherit;
   font-family: inherit;
+
   .dropdown-btn {
     display: inline-block;
-    border: 1px solid #adadad;
-    width: 100%;
-    padding: 6px 12px;
+    border: 1px solid $base-color;
+    width: fit-content;
+    padding: 0px 15px;
     margin-bottom: 0;
     font-weight: normal;
     line-height: 1.52857143;
@@ -18,64 +25,41 @@ $disable-background-color: #eceeef;
     cursor: pointer;
     background-image: none;
     border-radius: 4px;
+
     .selected-item-container {
       display: flex;
       float: left;
-      max-width: 93%;
-      .selected-item{
-        border: 1px solid $base-color;
-        margin-right: 4px;
-        margin-bottom: 4px;
+      max-width: fit-content;
+
+      .selected-item {
+        height: fit-content;
+        margin: 5px;
         background: $base-color;
-        padding: 0px 5px;
+        padding: 0px 4px;
         color: #fff;
         border-radius: 2px;
         float: left;
+
         span {
           overflow: hidden;
           text-overflow: ellipsis;
         }
+
         a {
           text-decoration: none;
         }
       }
     }
+
     .selected-item:hover {
       box-shadow: 1px 1px #959595;
     }
-    .dropdown-multiselect__caret {
-      line-height: 16px;
-      display: block;
-      position: absolute;
-      box-sizing: border-box;
-      width: 40px;
-      height: 38px;
-      right: 1px;
-      top: 0px;
-      padding: 4px 8px;
-      margin: 0;
-      text-decoration: none;
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    .dropdown-multiselect__caret:before {
-      position: relative;
-      right: 0;
-      top: 65%;
-      color: #999;
-      margin-top: 4px;
-      border-style: solid;
-      border-width: 8px 8px 0 8px;
-      border-color: #999999 transparent;
-      content: "";
-    }
-    .dropdown-multiselect--active .dropdown-multiselect__caret {
-      transform: rotateZ(180deg);
-    }
+
+
   }
+
   .disabled {
-    & > span {
+    &>span {
       background-color: $disable-background-color;
     }
   }
@@ -84,42 +68,48 @@ $disable-background-color: #eceeef;
 .dropdown-list {
   position: absolute;
   padding-top: 6px;
-  width: 100%;
+  width: fit-content;
   z-index: 9999;
   border: 1px solid #ccc;
   border-radius: 3px;
   background: #fff;
   margin-top: 10px;
   box-shadow: 0px 1px 5px #959595;
+
   ul {
     padding: 0px;
     list-style: none;
     overflow: auto;
     margin: 0px;
   }
+
   li {
     padding: 6px 10px;
     cursor: pointer;
     text-align: left;
   }
+
   .filter-textbox {
     border-bottom: 1px solid #ccc;
     position: relative;
     padding: 10px;
+
     input {
       border: 0px;
       width: 100%;
       padding: 0px 0px 0px 26px;
     }
+
     input:focus {
       outline: none;
     }
   }
 }
 
-.multiselect-item-checkbox:hover{
+.multiselect-item-checkbox:hover {
   background-color: #e4e3e3;
 }
+
 .multiselect-item-checkbox input[type='checkbox'] {
   border: 0;
   clip: rect(0 0 0 0);
@@ -131,17 +121,17 @@ $disable-background-color: #eceeef;
   width: 1px;
 }
 
-.multiselect-item-checkbox input[type='checkbox']:focus + div:before,
-.multiselect-item-checkbox input[type='checkbox']:hover + div:before {
+.multiselect-item-checkbox input[type='checkbox']:focus+div:before,
+.multiselect-item-checkbox input[type='checkbox']:hover+div:before {
   border-color: $base-color;
   background-color: #f2f2f2;
 }
 
-.multiselect-item-checkbox input[type='checkbox']:active + div:before {
+.multiselect-item-checkbox input[type='checkbox']:active+div:before {
   transition-duration: 0s;
 }
 
-.multiselect-item-checkbox input[type='checkbox'] + div {
+.multiselect-item-checkbox input[type='checkbox']+div {
   position: relative;
   padding-left: 2em;
   vertical-align: middle;
@@ -151,7 +141,7 @@ $disable-background-color: #eceeef;
   color: #000;
 }
 
-.multiselect-item-checkbox input[type='checkbox'] + div:before {
+.multiselect-item-checkbox input[type='checkbox']+div:before {
   box-sizing: content-box;
   content: '';
   color: $base-color;
@@ -166,7 +156,7 @@ $disable-background-color: #eceeef;
   transition: all 0.4s ease;
 }
 
-.multiselect-item-checkbox input[type='checkbox'] + div:after {
+.multiselect-item-checkbox input[type='checkbox']+div:after {
   box-sizing: content-box;
   content: '';
   background-color: $base-color;
@@ -181,26 +171,19 @@ $disable-background-color: #eceeef;
   transition: transform 200ms ease-out;
 }
 
-.multiselect-item-checkbox input[type='checkbox']:disabled + div:before {
+.multiselect-item-checkbox input[type='checkbox']:disabled+div:before {
   border-color: #cccccc;
 }
 
-.multiselect-item-checkbox
-  input[type='checkbox']:disabled:focus
-  + div:before
-  .multiselect-item-checkbox
-  input[type='checkbox']:disabled:hover
-  + div:before {
+.multiselect-item-checkbox input[type='checkbox']:disabled:focus+div:before .multiselect-item-checkbox input[type='checkbox']:disabled:hover+div:before {
   background-color: inherit;
 }
 
-.multiselect-item-checkbox
-  input[type='checkbox']:disabled:checked
-  + div:before {
+.multiselect-item-checkbox input[type='checkbox']:disabled:checked+div:before {
   background-color: #cccccc;
 }
 
-.multiselect-item-checkbox input[type='checkbox'] + div:after {
+.multiselect-item-checkbox input[type='checkbox']+div:after {
   background-color: transparent;
   top: 50%;
   left: 4px;
@@ -214,18 +197,18 @@ $disable-background-color: #eceeef;
   transform: rotate(-45deg) scale(0);
 }
 
-.multiselect-item-checkbox input[type='checkbox']:checked + div:after {
+.multiselect-item-checkbox input[type='checkbox']:checked+div:after {
   content: '';
   transform: rotate(-45deg) scale(1);
   transition: transform 200ms ease-out;
 }
 
-.multiselect-item-checkbox input[type='checkbox']:checked + div:before {
+.multiselect-item-checkbox input[type='checkbox']:checked+div:before {
   animation: borderscale 200ms ease-in;
   background: $base-color;
 }
 
-.multiselect-item-checkbox input[type='checkbox']:checked + div:after {
+.multiselect-item-checkbox input[type='checkbox']:checked+div:after {
   transform: rotate(-45deg) scale(1);
 }
 
