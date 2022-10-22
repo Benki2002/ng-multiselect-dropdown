@@ -117,6 +117,41 @@
           }
         }
       }
+    },
+    "dropdown-multiselect": {
+      "projectType": "library",
+      "root": "projects/dropdown-multiselect",
+      "sourceRoot": "projects/dropdown-multiselect/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/dropdown-multiselect/tsconfig.lib.json",
+            "project": "projects/dropdown-multiselect/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dropdown-multiselect/src/test.ts",
+            "tsConfig": "projects/dropdown-multiselect/tsconfig.spec.json",
+            "karmaConfig": "projects/dropdown-multiselect/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dropdown-multiselect/tsconfig.lib.json",
+              "projects/dropdown-multiselect/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-multiselect-dropdown-base",

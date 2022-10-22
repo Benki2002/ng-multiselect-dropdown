@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.802.2",
+    "@angular-devkit/build-ng-packagr": "~0.803.29",
     "@angular/animations": "8.2.2",
     "@angular/cli": "^8.2.2",
     "@angular/common": "8.2.2",
@@ -89,8 +90,12 @@
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.2.1",
     "ts-node": "~8.3.0",
+    "tsickle": "^0.37.0",
     "tslint": "~5.19.0",
     "typescript": "3.5.3",
     "zone.js": "^0.10.2"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
   }
 }
